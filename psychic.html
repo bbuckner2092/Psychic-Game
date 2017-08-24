@@ -1,8 +1,12 @@
 <!Doctype html>
-<html>
+<html lang="en-us">
+
 <head>
+
+	<meta charset= "UTF-8">
 	<title>Psychic-Game</title>
 </head>
+
 <body>
 	<h1>The Psychic Game</h1><br>
 	<div>Guess what letter I'm thinking of:</div><br>
@@ -12,9 +16,28 @@
 	<div>You Guess so far:</div>
 
 <script type="text/javascript">
+	
+	var psychicLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+	var userguess;
+	var compguess;  
+	var youWin = 0;
+	var youLose = 0;
+	var guessesLeft = 13;
+	var guessedLetters = [];
+	
+	<!-- Having issues with having my buttons show up in the dev tools -->
+	for (var i = 0; i < 26; i+++) {
+		charArray[String.fromCharCod(a + i)] = String.fromCharCode(a + i);
+	}
 
-document.onkeyup = function() {
-	alert("working!");
+	console.log(charArray);
+
+		document.onkeyup = function() {
+			var userguess = string.fromCharCod(event.KeyCode).toLowerCase();
+
+		console.log(userguess);
+
+		var compguess = psychicLetters[Math.floor(Math.random()*psychicLetters.length)];
 }
 </script>
 </body>
