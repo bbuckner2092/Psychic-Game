@@ -2,43 +2,50 @@
 <html lang="en-us">
 
 <head>
-
-	<meta charset= "UTF-8">
-	<title>Psychic-Game</title>
+    <meta charset="UTF-8">
+    <title>Psychic-Game</title>
 </head>
 
 <body>
-	<h1>The Psychic Game</h1><br>
-	<div>Guess what letter I'm thinking of:</div><br>
-	<div>Wins:</div><br>
-	<div>Losses:</div><br>
-	<div>Guesses Left:</div><br>
-	<div>You Guess so far:</div>
+    <h1>The Psychic Game</h1>
+    <br>
+    <div>Guess what letter I'm thinking of:</div>
+    <br>
+    <div>Wins:</div>
+    <br>
+    <div>Losses:</div>
+    <br>
+    <div>Guesses Left:</div>
+    <br>
+    <div>You Guess so far:</div>
+    <script type="text/javascript">
+    var psychicLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+    var userguess;
+    var compguess;
+    var youWin = 0;
+    var youLose = 0;
+    var guessesLeft = 13;
+    var guessedLetters = [];
 
-<script type="text/javascript">
-	
-	var psychicLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-	var userguess;
-	var compguess;  
-	var youWin = 0;
-	var youLose = 0;
-	var guessesLeft = 13;
-	var guessedLetters = [];
-	
-	<!-- Having issues with having my buttons show up in the dev tools -->
-	for (var i = 0; i < 26; i+++) {
-		charArray[String.fromCharCod(a + i)] = String.fromCharCode(a + i);
-	}
+    // Having issues with having my buttons show up in the dev tools 
 
-	console.log(charArray);
 
-		document.onkeyup = function() {
-			var userguess = string.fromCharCod(event.KeyCode).toLowerCase();
+    document.onkeyup = function(event) {
 
-		console.log(userguess);
+    	// When we press down on a key we want for that letter to pop-up next to user guess.
+        var userguess = string.fromCharCod(event.KeyCode).toLowerCase();
 
-		var compguess = psychicLetters[Math.floor(Math.random()*psychicLetters.length)];
-}
-</script>
+        console.log(userguess);
+
+        var compguess = psychicLetters[Math.floor(Math.random() * psychicLetters.length)];
+
+        for (var i = 0; i < psychicLetters.length; i++) {
+            charArray[String.fromCharCod(a + i)] = String.fromCharCode(a + i);
+        }
+
+        console.log(charArray);
+    }
+    </script>
 </body>
+
 </html>
