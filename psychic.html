@@ -7,43 +7,61 @@
 </head>
 
 <body>
-    <h1>The Psychic Game</h1>
-    <br>
-    <div>Guess what letter I'm thinking of:</div>
-    <br>
-    <div>Wins:</div>
-    <br>
-    <div>Losses:</div>
-    <br>
-    <div>Guesses Left:</div>
-    <br>
-    <div>You Guess so far:</div>
+    <div id="game">
+        <h1>The Psychic Game</h1>
+        <br>
+        <h2>>Guess what letter I'm thinking of:</h2>
+        <br>
+        <h2>Wins:</h2>
+        <br>
+        <h2>Losses:</h2>
+        <br>
+        <h2>Guesses Left:</h2>
+        <br>
+        <h2>You Guess so far:</h2>
+    </div>
     <script type="text/javascript">
+    // created a variable that listed out the entire alphabet
     var psychicLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-    var userguess;
-    var compguess;
+
+    // created a variable for the user(s) guess
     var youWin = 0;
     var youLose = 0;
     var guessesLeft = 13;
     var guessedLetters = [];
 
-    // Having issues with having my buttons show up in the dev tools 
 
-
+    // Runs once the user presses 1 of 26 alphabet keys
     document.onkeyup = function(event) {
 
-    	// When we press down on a key we want for that letter to pop-up next to user guess.
-        var userguess = string.fromCharCod(event.KeyCode).toLowerCase();
+        // When the user presses 1 of the 26 alphabets keys the program will display the key.
+        var userGuess = event.key;
 
-        console.log(userguess);
+        //When ever the user guess is selected then the computer guess will randomly select 1 of the 26 alphabets.
+        var compGuess = psychicLetters[Math.floor(Math.random() * psychicLetters.length)];
 
-        var compguess = psychicLetters[Math.floor(Math.random() * psychicLetters.length)];
+        // States that if the userGuess equals the psychicLetters then return the value to lowercase.
+        if ((userGuess === psychicLetters)) {
 
-        for (var i = 0; i < psychicLetters.length; i++) {
-            charArray[String.fromCharCod(a + i)] = String.fromCharCode(a + i);
+            // If the userGuess equals comGuess then add 1 point to youWin
+            if (userGuess === compGuess) {
+                youWin++;
+            }
+
+            // if userGuess does not equal compGuess then add 1 point to youLose
+            if (userGuess !== compGuess) {
+                youLose++;
+            }
+
         }
 
-        console.log(charArray);
+        var html =
+            "<p>You"
+
+        document.querySelector("#game").innerHTML = html;
+
+
+
     }
     </script>
 </body>
